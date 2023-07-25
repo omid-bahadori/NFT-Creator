@@ -20,7 +20,8 @@
     "react-use": "^17.4.0",
     "styled-components": "^6.0.5",
     "swiper": "^10.0.4",
-    "typewriter-effect": "^2.20.1"
+    "typewriter-effect": "^2.20.1",
+    "vite-plugin-react-js-as-jsx": "^1.2.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
