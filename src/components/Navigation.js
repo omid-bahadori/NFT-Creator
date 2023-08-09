@@ -8,7 +8,7 @@ import Logo from "./Logo";
 import Button from "./Button";
 
 const Section = styled.section`
-  with: 100vw;
+  width: 100vw;
   background-color: ${(props) => props.theme.body};
 `;
 
