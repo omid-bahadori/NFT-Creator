@@ -7,7 +7,7 @@ import styled from "styled-components";
 import ConfettiComponents from "../ConfettiComponents";
 
 // images
-import img1 from "../../../public/favicon.svg";
+import img1 from "../../assets/Nfts/bigheadm.svg";
 import img2 from "../../assets/Nfts/bighead-5.svg";
 import img3 from "../../assets/Nfts/bighead-8.svg";
 
