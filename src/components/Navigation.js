@@ -30,15 +30,15 @@ const Menu = styled.ul`
 
 const MenuItem = styled.li`
   margin: 0 1rem;
-  color: ${props => props.theme.text};
+  color: ${(props) => props.theme.text};
   cursor: pointer;
 
   &::after {
-    content: '';
+    content: "";
     display: block;
     width: 0;
     height: 2px;
-    background: ${props => props.theme.text};
+    background: ${(props) => props.theme.text};
     transition: width 0.3s ease;
   }
 
@@ -48,19 +48,29 @@ const MenuItem = styled.li`
 `;
 
 const Navigation = () => {
+  const scrollTo = (id) => {
+    let element = document.getElementById(id);
+
+    element.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
+  };
+
   return (
-    <Section>
+    <Section id="navigation">
       <NavBar>
         <Logo />
         <Menu>
-          <MenuItem>Home</MenuItem>
-          <MenuItem>About</MenuItem>
-          <MenuItem>Roadmap</MenuItem>
-          <MenuItem>Showcase</MenuItem>
-          <MenuItem>Team</MenuItem>
-          <MenuItem>Faq</MenuItem>
+          <MenuItem onClick={() => scrollTo("home")}>Home</MenuItem>
+          <MenuItem onClick={() => scrollTo("about")}>About</MenuItem>
+          <MenuItem onClick={() => scrollTo("roadmap")}>Roadmap</MenuItem>
+          <MenuItem onClick={() => scrollTo("showcase")}>Showcase</MenuItem>
+          <MenuItem onClick={() => scrollTo("team")}>Team</MenuItem>
+          <MenuItem onClick={() => scrollTo("faq")}>Faq</MenuItem>
         </Menu>
-        <Button text="Connect Wallet" link="https://google.com"/>
+        <Button text="Connect Wallet" link="https://google.com" />
       </NavBar>
     </Section>
   );
