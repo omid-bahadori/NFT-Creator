@@ -68,11 +68,11 @@ const Item = styled.li`
   cursor: pointer;
 
   &::after {
-    content: '';
+    content: "";
     display: block;
     width: 0;
     height: 2px;
-    background: ${props => props.theme.text};
+    background: ${(props) => props.theme.text};
     transition: width 0.3s ease;
   }
 
@@ -90,6 +90,16 @@ const Bottom = styled.div`
 `;
 
 const Footer = () => {
+  const scrollTo = (id) => {
+    let element = document.getElementById(id);
+
+    element.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
+  };
+
   return (
     <Section>
       <Banner />
@@ -112,22 +122,19 @@ const Footer = () => {
           </IconList>
         </Left>
         <MenuItems>
-          <Item>Home</Item>
-          <Item>About</Item>
-          <Item>Roadmap</Item>
-
-          <Item>Showcase</Item>
-          <Item>Team</Item>
-          <Item>Faq</Item>
+          <Item onClick={() => scrollTo("home")}>Home</Item>
+          <Item onClick={() => scrollTo("about")}>About</Item>
+          <Item onClick={() => scrollTo("roadmap")}>Roadmap</Item>
+          <Item onClick={() => scrollTo("showcase")}>Showcase</Item>
+          <Item onClick={() => scrollTo("team")}>Team</Item>
+          <Item onClick={() => scrollTo("faq")}>Faq</Item>
         </MenuItems>
       </Container>
       <Bottom>
         <span>
           &copy; {new Date().getFullYear} Weirdos Club. All rights reserved.
         </span>
-        <span>
-          Made with &#10084; by Omid Bahadori.
-        </span>
+        <span>Made with &#10084; by Omid Bahadori.</span>
       </Bottom>
     </Section>
   );
